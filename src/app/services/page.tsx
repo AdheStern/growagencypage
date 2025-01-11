@@ -4,16 +4,15 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 export default function ServicesPage() {
   return (
-    <section className="bg-black h-screen w-screen flex items-center justify-center relative overflow-hidden">
-      <BentoGrid className="max-w-4xl mx-auto">
+    <section className="bg-black min-h-screen w-full flex items-center justify-center relative overflow-hidden py-16 px-4">
+      <BentoGrid className="max-w-4xl mx-auto w-full">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
             title={item.title}
             description={item.description}
             header={item.header}
-            // icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+            className={cn(i === 3 || i === 6 ? "md:col-span-2" : "", "w-full")}
           />
         ))}
       </BentoGrid>
@@ -24,36 +23,36 @@ export default function ServicesPage() {
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
 );
+
 const items = [
   {
-    title: "Planificación estrategica",
-    description: "descripción.",
+    title: "Planificación estratégica",
+    description:
+      "Desarrollamos estrategias personalizadas para alcanzar tus objetivos de negocio.",
     header: <Skeleton />,
-    // icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Gestion de redes sociales",
-    description: "descripción.",
+    title: "Gestión de redes sociales",
+    description:
+      "Manejamos tus perfiles en redes sociales para aumentar tu presencia online.",
     header: <Skeleton />,
-    // icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Publicidad en redes sociales",
-    description: "descripción.",
+    description:
+      "Creamos y gestionamos campañas publicitarias efectivas en plataformas sociales.",
     header: <Skeleton />,
-    // icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Automatización y Diseño de Funnels",
-    description: "Coreos masivos, embudos de venta.",
+    description:
+      "Implementamos correos masivos y embudos de venta para optimizar tus conversiones.",
     header: <Skeleton />,
-    // icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Diseño Gráfico y Web",
     description:
-      "Creacion de identidades visuales, materiales graficos y paginas web a medida.",
+      "Creación de identidades visuales, materiales gráficos y páginas web a medida.",
     header: <Skeleton />,
-    // icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
   },
 ];
